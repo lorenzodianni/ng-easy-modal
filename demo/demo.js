@@ -1,12 +1,10 @@
 'use strict';
 
 angular
-.module('Demo', ['ngModal'])
+.module('MyApp', ['ngModal'])
 .controller('MainCtrl', ['ModalDelegate', function MainCtrl(ModalDelegate) {
-  var main = this;
-  main.modal = ModalDelegate;
-
-  main.exampleObject = {
+  this.modal = ModalDelegate;
+  this.exampleObject = {
     status: 'classic',
     title: 'Classic example',
     body: 'You can close me only with my buttons, not with a click out event',
