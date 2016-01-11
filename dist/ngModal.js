@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('ngModal', []).factory('ModalDelegate', [function ModalDelegate() {
+angular.module('ngModal', [])
+
+.factory('ModalDelegate', [function ModalDelegate() {
   var service = {
     show: show,
     close: close,
@@ -40,7 +42,9 @@ angular.module('ngModal', []).factory('ModalDelegate', [function ModalDelegate()
   function get(key) {
     return service.current[key];
   }
-}]).directive('modal', function modal() {
+}])
+
+.directive('modal', function modal() {
   return {
     scope: {},
     bindToController: true,
