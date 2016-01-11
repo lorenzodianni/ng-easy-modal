@@ -1,0 +1,25 @@
+{
+  "name": "ng-modal",
+  "version": "0.0.1",
+  "description": "Modal module for AngularJS 1.x",
+  "main": "none",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorenzodianni/ngModal.git"
+  },
+  "author": "Lorenzo D'Ianni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lorenzodianni/ngModal/issues"
+  },
+  "homepage": "https://github.com/lorenzodianni/ngModal#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  }
+}
