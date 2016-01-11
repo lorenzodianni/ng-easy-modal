@@ -7,8 +7,9 @@ var babel = require('gulp-babel');
 
 
 gulp.task('default', function(){
-  return gulp.src('dist/ngModal.js')
+  return gulp.src('ng-modal.js')
     .pipe(babel())
+    .pipe(gulp.dest('dist'))
     .pipe(rename({extname: '.min.js'}))
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
