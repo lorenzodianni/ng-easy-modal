@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lorenzodianni/ngModal.git"
+    "url": "git+https://github.com/lorenzodianni/ng-modal.git"
   },
   "author": "Lorenzo D'Ianni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lorenzodianni/ngModal/issues"
+    "url": "https://github.com/lorenzodianni/ng-modal/issues"
   },
-  "homepage": "https://github.com/lorenzodianni/ngModal#readme",
+  "homepage": "https://github.com/lorenzodianni/ng-modal#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",
