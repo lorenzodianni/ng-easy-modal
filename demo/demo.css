@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+[ng-cloak] {
+  display: none !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  font: 400 14px 'Roboto';
+}
+
+.buttons {
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.64);
+  text-align: center;
+  padding: 40px 40px 32px 40px;
+}
+h1 small {
+  font-size: 40px;
+}
+
+b {
+  font-weight: 500;
+}
+
+modal {
+  position: absolute;
+  z-index: 997;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 0 0px 10000000px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 0 0px 10000000px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 0 0px 10000000px rgba(0, 0, 0, 0.15);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.modal-head {
+  color: #1F1F1F;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 24px 24px 20px 24px;
+}
+.modal-body {
+  color: #818181;
+  padding: 0px 24px 24px 24px;
+}
+.modal-footer {
+  display: -webkit-flex;
+  -webkit-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-close {
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  min-width: 64px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 8px;
+  margin: 8px 4px;
+  color: #1E94F2;
+  background-color: white;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.button:first-child {
+  margin-left: 8px;
+}
+.button:last-child {
+  margin-right: 8px;
+}
+.button:hover {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+.button--blue {
+  color: white;
+  background-color: #1E94F2;
+}
+.button--blue:hover {
+  background-color: rgba(30, 148, 242, 0.75);
+}

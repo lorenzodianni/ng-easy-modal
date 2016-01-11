@@ -1,0 +1,44 @@
+<html ng-app="Demo" ng-controller="MainCtrl as main">
+  <header>
+    <title>Demo ngModal</title>
+    <link rel="stylesheet" href="demo.css">
+  </header>
+  <body>
+    <h1>Material Design<br><small>Dialog / Modal in Angular</small></h1>
+    <div class="buttons">
+      <button
+        class="button button--blue"
+        ng-click="main.modal.show(main.exampleObject)">
+        Classic
+      </button>
+
+      <button
+        class="button button--blue"
+        ng-click="main.modal.show(
+          'variant',
+          'I have transclude!',
+          null,
+          [{label: 'Disagree', action: null}, {label: 'Agree', action: null}],
+          true)">
+        Transclude & Click out
+      </button>
+    </div>
+
+    <modal
+      ng-if="main.modal.status('classic')">
+    </modal>
+
+    <modal ng-cloak
+      ng-if="main.modal.status('variant')">
+      <div>My content comes from the page and not from directive or controller</div>
+      <br />
+      <div>You can close me with a simple <b>click out</b></div>
+      <br />
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam architecto, id assumenda velit modi officiis quo eaque quaerat sit veritatis!</div>
+    </modal>
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../dist/ngModal.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
