@@ -8,7 +8,7 @@ angular
     status: 'classic',
     title: 'Classic example',
     body: 'You can close me only with my buttons, not with a click out event',
-    actions: [{
+    buttons: [{
       label: 'Disagree',
       action: function(){
         alert('Disagree');

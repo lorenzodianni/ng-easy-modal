@@ -11,18 +11,18 @@
         status: null,
         title: null,
         body: null,
-        actions: null,
+        buttons: null,
         clickOut: false
       }
     };
 
     return service;
 
-    function show(value, title, body, actions, clickOut) {
+    function show(value, title, body, buttons, clickOut) {
       service.current.status = value.status || value;
       service.current.title = value.title || title;
       service.current.body = value.body || body;
-      service.current.actions = value.actions || actions;
+      service.current.buttons = value.buttons || buttons;
       service.current.clickOut = value.clickOut || clickOut || false;
     }
 
@@ -30,7 +30,7 @@
       service.current.status = null;
       service.current.title = null;
       service.current.body = null;
-      service.current.actions = null;
+      service.current.buttons = null;
       service.current.clickOut = false;
     }
 
@@ -59,7 +59,7 @@
           </div>
           <div class="modal-footer">
             <button class="button"
-              ng-repeat="button in easyModal.get('actions')"
+              ng-repeat="button in easyModal.get('buttons')"
               ng-click="button.action(); easyModal.close();">
               {{button.label}}
             </button>
