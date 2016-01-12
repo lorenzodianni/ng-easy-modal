@@ -1,16 +1,16 @@
-# ngModal
+# ngEasyModal
 
 A simple directive/delegator for show, get and hide modals.
 
 # Usage
-Load *ngModal.js* library in your index.html file and inject **ngModal** module inside your angular module 
+Load *ng-easy-modal.js* library in your index.html file and inject **ngEasyModal** module inside your angular module
 ```javascript
-angular.module('MyApp', ['ngModal'])
+angular.module('MyApp', ['ngEasyModal'])
 ```
-Inject **ModalDelegate** inside your controller/service/directive and connect with your scope ($scope or this);
+Inject **EasyModalDelegate** inside your controller/service/directive and connect with your scope ($scope or this);
 ```javascript
-.controller('MainCtrl', ['ModalDelegate', function MainCtrl(ModalDelegate) {
-    this.modal = ModalDelegate;
+.controller('MainCtrl', ['EasyModalDelegate', function MainCtrl(EasyModalDelegate) {
+    this.modal = EasyModalDelegate;
 }]);
 ```
 
