@@ -1,6 +1,6 @@
 {
   "name": "ng-easy-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modal module for AngularJS 1.x",
   "main": "none",
   "scripts": {
