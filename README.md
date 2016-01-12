@@ -23,5 +23,5 @@ Inject **EasyModalDelegate** inside your controller/service/directive and connec
 - current.get('status')
 - current.get('title')
 - current.get('body')
-- current.get('actions')
+- current.get('buttons')
 - current.get('clickOut')
