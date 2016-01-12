@@ -1,9 +1,9 @@
 'use strict';
 
 angular
-.module('MyApp', ['ngModal'])
-.controller('MainCtrl', ['ModalDelegate', function MainCtrl(ModalDelegate) {
-  this.modal = ModalDelegate;
+.module('MyApp', ['ngEasyModal'])
+.controller('MainCtrl', ['EasyModalDelegate', function MainCtrl(EasyModalDelegate) {
+  this.easyModal = EasyModalDelegate;
   this.exampleObject = {
     status: 'classic',
     title: 'Classic example',

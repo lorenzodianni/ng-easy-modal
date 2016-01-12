@@ -1,5 +1,5 @@
 {
-  "name": "ng-modal",
+  "name": "ng-easy-modal",
   "version": "0.0.1",
   "description": "Modal module for AngularJS 1.x",
   "main": "none",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lorenzodianni/ng-modal.git"
+    "url": "git+https://github.com/lorenzodianni/ng-easy-modal.git"
   },
   "author": "Lorenzo D'Ianni",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lorenzodianni/ng-modal/issues"
+    "url": "https://github.com/lorenzodianni/ng-easy-modal/issues"
   },
-  "homepage": "https://github.com/lorenzodianni/ng-modal#readme",
+  "homepage": "https://github.com/lorenzodianni/ng-easy-modal#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",

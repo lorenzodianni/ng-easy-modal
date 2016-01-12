@@ -11,13 +11,13 @@
     <div class="buttons">
       <button
         class="button button--blue"
-        ng-click="main.modal.show(main.exampleObject)">
+        ng-click="main.easyModal.show(main.exampleObject)">
         Classic
       </button>
 
       <button
         class="button button--blue"
-        ng-click="main.modal.show(
+        ng-click="main.easyModal.show(
           'variant',
           'I have transclude!',
           null,
@@ -27,12 +27,12 @@
       </button>
     </div>
 
-    <modal
-      ng-if="main.modal.status('classic')">
-    </modal>
+    <easy-modal
+      ng-if="main.easyModal.status('classic')">
+    </easy-modal>
 
     <modal ng-cloak
-      ng-if="main.modal.status('variant')">
+      ng-if="main.easyModal.status('variant')">
       <div>My content comes from the page and not from directive or controller</div>
       <br />
       <div>You can close me with a simple <b>click out</b></div>

@@ -1,7 +1,7 @@
 'use strict';
 
 (() => {
-  function ModalDelegate() {
+  function EasyModalDelegate() {
     let service = {
       show,
       close,
@@ -43,41 +43,41 @@
     }
   }
 
-  function modalDirective() {
+  function EasyModalDirective() {
     return {
       scope: {},
       bindToController: true,
-      controller: ['ModalDelegate', modalController],
-      controllerAs: 'modal',
+      controller: ['EasyModalDelegate', EasyModalController],
+      controllerAs: 'easyModal',
       transclude: true,
       template: `
         <div class="modal">
-          <div class="modal-head">{{modal.get('title')}}</div>
+          <div class="modal-head">{{easyModal.get('title')}}</div>
           <div class="modal-body">
-            {{modal.get('body')}}
+            {{easyModal.get('body')}}
             <div ng-transclude></div>
           </div>
           <div class="modal-footer">
             <button class="button"
-              ng-repeat="button in modal.get('actions')"
-              ng-click="button.action(); modal.close();">
+              ng-repeat="button in easyModal.get('actions')"
+              ng-click="button.action(); easyModal.close();">
               {{button.label}}
             </button>
           </div>
         </div>
-        <div class="modal-close" ng-click="modal.get('clickOut') ? modal.close() : modal.get('clickOut')"></div>
+        <div class="modal-close" ng-click="easyModal.get('clickOut') ? easyModal.close() : easyModal.get('clickOut')"></div>
       `
     };
 
-    function modalController(ModalDelegate) {
+    function EasyModalController(EasyModalDelegate) {
       /*jshint validthis:true */
-      this.get = ModalDelegate.current.get;
-      this.close = ModalDelegate.close;
+      this.get = EasyModalDelegate.current.get;
+      this.close = EasyModalDelegate.close;
     }
   }
 
   angular
-  .module('ngModal', [])
-  .factory('ModalDelegate', [ModalDelegate])
-  .directive('modal', [modalDirective]);
+  .module('ngEasyModal', [])
+  .factory('EasyModalDelegate', [EasyModalDelegate])
+  .directive('easyModal', [EasyModalDirective]);
 })();
