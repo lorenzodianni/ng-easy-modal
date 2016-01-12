@@ -31,18 +31,18 @@
       ng-if="main.easyModal.status('classic')">
     </easy-modal>
 
-    <modal ng-cloak
+    <easy-modal ng-cloak
       ng-if="main.easyModal.status('variant')">
       <div>My content comes from the page and not from directive or controller</div>
       <br />
       <div>You can close me with a simple <b>click out</b></div>
       <br />
       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam architecto, id assumenda velit modi officiis quo eaque quaerat sit veritatis!</div>
-    </modal>
+    </easy-modal>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script src="../dist/ng-modal.js"></script>
+    <script src="../dist/ng-easy-modal.js"></script>
     <script src="demo.js"></script>
     <script>
       if ('addEventListener' in document) {
