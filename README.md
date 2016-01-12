@@ -14,6 +14,13 @@ Inject **EasyModalDelegate** inside your controller/service/directive and connec
 ```javascript
 .controller('MainCtrl', ['EasyModalDelegate', function MainCtrl(EasyModalDelegate) {
     this.easyModal = EasyModalDelegate;
+}]);
+```
+Create a new Object for set all EasyModal params
+```javascript
+.controller('MainCtrl', ['EasyModalDelegate', function MainCtrl(EasyModalDelegate) {
+    this.easyModal = EasyModalDelegate;
+
     this.objectForEasyModal = {
       // Status or ID (you will call it for show/hide this EasyModal)
       status: 'classic',
@@ -40,14 +47,16 @@ Inject **EasyModalDelegate** inside your controller/service/directive and connec
 ```
 Insert inside your HTML file:
 ```html
-<button
-  ng-click="MainCtrl.easyModal.show(MainCtrl.objectForEasyModal)">
-  Show my classic modal
-</button>
+<div ng-controller="MainCtrl as main">
+  <button
+    ng-click="main.easyModal.show(main.objectForEasyModal)">
+    Show my classic modal
+  </button>
 
-<easy-modal
-  ng-if="MainCtrl.easyModal.status('classic')">
-</easy-modal>
+  <easy-modal
+    ng-if="main.easyModal.status('classic')">
+  </easy-modal>
+</div>
 ```
 
 # API
