@@ -50,22 +50,25 @@
       controller: ['EasyModalDelegate', EasyModalController],
       controllerAs: 'easyModal',
       transclude: true,
+      replace: true,
       template: `
-        <div class="modal">
-          <div class="modal-head">{{easyModal.get('title')}}</div>
-          <div class="modal-body">
-            {{easyModal.get('body')}}
-            <div ng-transclude></div>
+        <div class="easy-modal">
+          <div class="easy-modal-box">
+            <div class="easy-modal-box--head">{{easyModal.get('title')}}</div>
+            <div class="easy-modal-box--body">
+              {{easyModal.get('body')}}
+              <div ng-transclude></div>
+            </div>
+            <div class="easy-modal-box--footer">
+              <button class="button"
+                ng-repeat="button in easyModal.get('buttons')"
+                ng-click="button.action(); easyModal.close();">
+                {{button.label}}
+              </button>
+            </div>
           </div>
-          <div class="modal-footer">
-            <button class="button"
-              ng-repeat="button in easyModal.get('buttons')"
-              ng-click="button.action(); easyModal.close();">
-              {{button.label}}
-            </button>
-          </div>
+          <div class="easy-modal-close" ng-click="easyModal.get('clickOut') ? easyModal.close() : easyModal.get('clickOut')"></div>
         </div>
-        <div class="modal-close" ng-click="easyModal.get('clickOut') ? easyModal.close() : easyModal.get('clickOut')"></div>
       `
     };
 
