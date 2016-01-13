@@ -10,13 +10,15 @@ angular
     body: 'You can close me only with my buttons, not with a click out event',
     buttons: [{
       label: 'Disagree',
-      action: function(){
+      action: function(e){
         alert('Disagree');
+        console.log(e);
       }
     }, {
       label: 'Agree',
-      action: function(){
+      action: function(e){
         alert('Agree');
+        console.log(e);
       }
     }],
     clickOut: false

@@ -62,7 +62,7 @@
             <div class="easy-modal-box--footer">
               <button class="button"
                 ng-repeat="button in easyModal.get('buttons')"
-                ng-click="button.action(); easyModal.close();">
+                ng-click="button.action($event); easyModal.close();">
                 {{button.label}}
               </button>
             </div>

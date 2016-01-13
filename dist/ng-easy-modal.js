@@ -49,7 +49,7 @@
       controllerAs: 'easyModal',
       transclude: true,
       replace: true,
-      template: '\n        <div class="easy-modal">\n          <div class="easy-modal-box">\n            <div class="easy-modal-box--head">{{easyModal.get(\'title\')}}</div>\n            <div class="easy-modal-box--body">\n              {{easyModal.get(\'body\')}}\n              <div ng-transclude></div>\n            </div>\n            <div class="easy-modal-box--footer">\n              <button class="button"\n                ng-repeat="button in easyModal.get(\'buttons\')"\n                ng-click="button.action(); easyModal.close();">\n                {{button.label}}\n              </button>\n            </div>\n          </div>\n          <div class="easy-modal-close" ng-click="easyModal.get(\'clickOut\') ? easyModal.close() : easyModal.get(\'clickOut\')"></div>\n        </div>\n      '
+      template: '\n        <div class="easy-modal">\n          <div class="easy-modal-box">\n            <div class="easy-modal-box--head">{{easyModal.get(\'title\')}}</div>\n            <div class="easy-modal-box--body">\n              {{easyModal.get(\'body\')}}\n              <div ng-transclude></div>\n            </div>\n            <div class="easy-modal-box--footer">\n              <button class="button"\n                ng-repeat="button in easyModal.get(\'buttons\')"\n                ng-click="button.action($event); easyModal.close();">\n                {{button.label}}\n              </button>\n            </div>\n          </div>\n          <div class="easy-modal-close" ng-click="easyModal.get(\'clickOut\') ? easyModal.close() : easyModal.get(\'clickOut\')"></div>\n        </div>\n      '
     };
 
     function EasyModalController(EasyModalDelegate) {
