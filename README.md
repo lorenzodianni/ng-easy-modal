@@ -62,8 +62,8 @@ Insert inside your HTML file:
 # API
 - EasyModalDelegate.show(object || status, title, body, actions, clickOut)
 - EasyModalDelegate.close()
-- EasyModalDelegate.current.get('status')
-- EasyModalDelegate.current.get('title')
-- EasyModalDelegate.current.get('body')
-- EasyModalDelegate.current.get('buttons')
-- EasyModalDelegate.current.get('clickOut')
+- EasyModalDelegate.get('status')
+- EasyModalDelegate.get('title')
+- EasyModalDelegate.get('body')
+- EasyModalDelegate.get('buttons')
+- EasyModalDelegate.get('clickOut')

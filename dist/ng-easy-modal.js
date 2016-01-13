@@ -6,8 +6,8 @@
       show: show,
       close: close,
       status: status,
+      get: get,
       current: {
-        get: get,
         status: null,
         title: null,
         body: null,
@@ -18,20 +18,18 @@
 
     return service;
 
-    function show(value, title, body, buttons, clickOut) {
-      service.current.status = value.status || value;
-      service.current.title = value.title || title;
-      service.current.body = value.body || body;
-      service.current.buttons = value.buttons || buttons;
-      service.current.clickOut = value.clickOut || clickOut || false;
+    function show() /* value, title, body, buttons, clickOut */{
+      service.current.status = arguments[0].status || arguments[0];
+      service.current.title = arguments[0].title || arguments[1];
+      service.current.body = arguments[0].body || arguments[2];
+      service.current.buttons = arguments[0].buttons || arguments[3];
+      service.current.clickOut = arguments[0].clickOut || arguments[4] || false;
     }
 
     function close() {
-      service.current.status = null;
-      service.current.title = null;
-      service.current.body = null;
-      service.current.buttons = null;
-      service.current.clickOut = false;
+      for (var key in service.current) {
+        return key === 'clickOut' ? service.current[key] = false : service.current[key] = null;
+      }
     }
 
     function status(value) {
@@ -55,7 +53,7 @@
 
     function EasyModalController(EasyModalDelegate) {
       /*jshint validthis:true */
-      this.get = EasyModalDelegate.current.get;
+      this.get = EasyModalDelegate.get;
       this.close = EasyModalDelegate.close;
     }
   }
