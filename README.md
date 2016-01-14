@@ -59,7 +59,7 @@ Insert inside your .html file:
 </div>
 ```
 
-# Style Sheet
+# Style
 Insert *ng-easy-modal.css* in the &lt;header&gt; of your .html file
 ```html
 <header>
