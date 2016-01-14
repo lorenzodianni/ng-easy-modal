@@ -60,7 +60,7 @@ Insert inside your .html file:
 ```
 
 # Style Sheet
-Insert *ng-easy-modal.css* in the <header> of your .html file
+Insert *ng-easy-modal.css* in the &lt;header&gt; of your .html file
 ```html
 <header>
   <title>Your Title</title>
