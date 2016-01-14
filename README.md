@@ -71,7 +71,7 @@ Insert *ng-easy-modal.css* in the &lt;header&gt; of your .html file
   ...
 </header>
 ```
-CSS Classes inside easy-modal directive:
+CSS classes inside easy-modal directive:
 ```css
 .easy-modal
 .easy-modal-box
