@@ -45,7 +45,7 @@ Create a new Object for set all EasyModal params
     };
 }]);
 ```
-Insert inside your HTML file:
+Insert inside your .html file:
 ```html
 <div ng-controller="MainCtrl as main">
   <button
@@ -57,6 +57,29 @@ Insert inside your HTML file:
     ng-if="main.easyModal.status('classic')">
   </easy-modal>
 </div>
+```
+
+# Style Sheet
+Insert *ng-easy-modal.css* in the <header> of your .html file
+```html
+<header>
+  <title>Your Title</title>
+  ...
+
+  <link rel="stylesheet" href="ng-easy-modal.css">
+
+  ...
+</header>
+```
+CSS Classes inside easy-modal directive:
+```css
+.easy-modal
+.easy-modal-box
+.easy-modal-box--head
+.easy-modal-box--body
+.easy-modal-box--footer
+.easy-modal-box--footer-btn
+.easy-modal-close
 ```
 
 # API
