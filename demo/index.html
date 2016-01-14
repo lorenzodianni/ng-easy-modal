@@ -4,19 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––––
+    //// Easy Modal style.css -->
+    <link rel="stylesheet" href="../dist/css/ng-easy-modal.css">
+    <!-- style demo page -->
     <link rel="stylesheet" href="demo.css">
+
   </header>
   <body>
-    <h1>Material Design<br><small>Dialog / Modal in Angular</small></h1>
+    <h1>Easy Modal<br><small>Dialog / Modal in Angular</small></h1>
     <div class="buttons">
       <button
-        class="button button--blue"
+        class="button"
         ng-click="main.easyModal.show(main.exampleObject)">
         Classic
       </button>
 
       <button
-        class="button button--blue"
+        class="button"
         ng-click="main.easyModal.show(
           'variant',
           'I have transclude!',
@@ -42,14 +48,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script>if ('addEventListener' in document) {document.addEventListener('DOMContentLoaded', function() {FastClick.attach(document.body);}, false);}</script>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––––
+    //// Easy Modal lib.js -->
     <script src="../dist/ng-easy-modal.js"></script>
+    <!-- angular demo page -->
     <script src="demo.js"></script>
-    <script>
-      if ('addEventListener' in document) {
-        document.addEventListener('DOMContentLoaded', function() {
-          FastClick.attach(document.body);
-        }, false);
-      }
-    </script>
+
   </body>
 </html>

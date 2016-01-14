@@ -56,11 +56,11 @@
           <div class="easy-modal-box">
             <div class="easy-modal-box--head">{{easyModal.get('title')}}</div>
             <div class="easy-modal-box--body">
-              {{easyModal.get('body')}}
+              <p>{{easyModal.get('body')}}</p>
               <div ng-transclude></div>
             </div>
             <div class="easy-modal-box--footer">
-              <button class="button"
+              <button class="easy-modal-box--footer-btn"
                 ng-repeat="button in easyModal.get('buttons')"
                 ng-click="button.action($event); easyModal.close();">
                 {{button.label}}

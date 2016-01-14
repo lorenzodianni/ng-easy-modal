@@ -4,6 +4,6 @@
 .idea/
 .DS_Store
 *.iml
-*.map
+.tmp
 
 node_modules/
