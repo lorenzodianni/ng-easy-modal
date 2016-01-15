@@ -2,7 +2,7 @@
 
 A simple directive/delegator for show, get and hide modals.
 ```sh
-$ npm install ng-easy-modal --save-dev
+$ npm install ng-easy-modal --save
 ```
 
 # Usage
