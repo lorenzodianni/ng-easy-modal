@@ -86,6 +86,13 @@ h1 span {
   display: inline-block;
   vertical-align: top;
 }
+h1 small {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  line-height: 140%;
+  margin-top: 24px;
+}
 
 h2 {
   width: 100%;
@@ -101,8 +108,8 @@ b {
 
 .examples {
   position: relative;
-  left: 30%;
-  width: 70%;
+  left: 40%;
+  width: 60%;
 }
 .example {
   display: -moz-flex;
@@ -137,7 +144,7 @@ b {
   line-height: 36px;
   font-size: 14px;
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   outline: none;
   border: none;
@@ -163,7 +170,7 @@ b {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30%;
+  width: 40%;
   height: 100%;
   text-align: center;
   padding: 16px;
@@ -182,4 +189,18 @@ b {
 }
 .info-current .choise {
   color: #0288D1;
+}
+
+@media screen and (max-width: 720px) {
+  .info {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #B6B6B6;
+  }
+  .examples {
+    left: 0;
+    width: 100%;
+  }
 }
