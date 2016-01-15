@@ -12,7 +12,7 @@
         title: null,
         body: null,
         buttons: null,
-        clickOut: false
+        clickOut: null
       }
     };
 
@@ -28,7 +28,7 @@
 
     function close() {
       for (var key in service.current) {
-        return key === 'clickOut' ? service.current[key] = false : service.current[key] = null;
+        service.current[key] = null;
       }
     }
 
