@@ -3,24 +3,57 @@
 angular
 .module('MyApp', ['ngEasyModal'])
 .controller('MainCtrl', ['EasyModalDelegate', function MainCtrl(EasyModalDelegate) {
-  this.easyModal = EasyModalDelegate;
-  this.exampleObject = {
-    status: 'classic',
-    title: 'Classic example',
-    body: 'You can close me only with my buttons, not with a click out event',
-    buttons: [{
-      label: 'Disagree',
-      action: function(e){
-        alert('Disagree');
-        console.log(e);
-      }
-    }, {
-      label: 'Agree',
-      action: function(e){
-        alert('Agree');
-        console.log(e);
-      }
-    }],
+  var main = this;
+  main.easyModal = EasyModalDelegate;
+
+  var examples = [{
+    status: 'Classic',
+    labels: ['One', 'Two', 'Three'],
     clickOut: false
-  };
+  }, {
+    status: 'Click Out',
+    labels: ['One', 'Two', 'Three'],
+    clickOut: true
+  }, {
+    status: 'Transclude',
+    labels: ['One', 'Two', 'Three'],
+    clickOut: false
+  }];
+
+  examples.forEach(function(example){
+    example.labels.forEach(function(label) {
+
+      var key = toCamelCase(example.status) + label;
+      var status = example.status;
+      var clickOut = example.clickOut;
+
+      main[key] = {
+        status: toCamelCase(status),
+        title: status + ' ' + label,
+        body: 'I\'m a ' + status.toLowerCase() + ' ' + label.toLowerCase() + ' example body',
+        buttons: [{
+          label: 'Disagree ' + status + ' ' + label,
+          action: function($event) {
+            printInfo('Disagree ' + status + ' ' + label);
+          }
+        }, {
+          label: 'Agree ' + status + ' ' + label,
+          action: function($event) {
+            printInfo('Agree ' + status + ' ' + label);
+          }
+        }],
+        clickOut: clickOut
+      };
+
+    });
+  });
+
+  function printInfo(info) {
+    main.currentAction = info;
+  }
+
+  function toCamelCase(string) {
+    return string.toLowerCase().replace(/\s(.)/g, function(letter) { return letter.toUpperCase(); }).replace(/\s/g, '');
+  }
+
 }]);

@@ -58,6 +58,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 * {
   margin: 0;
   padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-moz-tap-highlight-color: rgba(0,0,0,0);
 	tap-highlight-color: rgba(0,0,0,0);
@@ -75,23 +78,57 @@ h1 {
   font-size: 56px;
   font-weight: 300;
   line-height: 100%;
-  color: rgba(0, 0, 0, 0.64);
+  color: rgba(0, 0, 0, 0.70);
   text-align: center;
-  padding: 40px 40px 32px 40px;
+  padding: 40px 0 32px 0;
 }
-h1 small {
-  font-size: 40px;
+h1 span {
+  display: inline-block;
+  vertical-align: top;
+}
+
+h2 {
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.67);
+  margin-bottom: 16px;
 }
 
 b {
   font-weight: 500;
 }
 
-.buttons {
+.examples {
+  position: relative;
+  left: 30%;
+  width: 70%;
+}
+.example {
+  display: -moz-flex;
+  -moz-flex-wrap: wrap;
+  -moz-justify-content: center;
+  -moz-align-items: center;
+  -moz-align-content: center;
+  display: -ms-flex;
+  -ms-flex-wrap: wrap;
+  -ms-justify-content: center;
+  -ms-align-items: center;
+  -ms-align-content: center;
   display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
   -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -webkit-align-content: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  height: 300px;
+  padding: 32px;
+  border-bottom: 1px solid #B6B6B6;
 }
 .button {
   cursor: pointer;
@@ -120,4 +157,29 @@ b {
 }
 .button:hover {
   background-color: rgba(30, 148, 242, 0.75);
+}
+
+.info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  padding: 16px;
+  color: #212121;
+  border-right: 1px solid #B6B6B6;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.info-current {
+  padding: 4px;
+  margin: 4px;
+}
+.info-current .value {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.info-current .choise {
+  color: #0288D1;
 }
