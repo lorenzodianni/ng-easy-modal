@@ -42,7 +42,7 @@ $shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14
 // Style
 
 .easy-modal {
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 0;
   left: 0;
@@ -95,15 +95,15 @@ $shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14
       &-btn {
         cursor: pointer;
         min-width: 64px;
-        height: 36px;
-        line-height: 36px;
+        min-height: 36px;
+        line-height: 100%;
         font-size: 14px;
         font-weight: 500;
         text-align: left;
         text-transform: uppercase;
         outline: none;
         border: none;
-        padding: 0 8px;
+        padding: 10px 8px;
         margin: 8px 4px;
         color: $primary-color;
         background-color: $primary-color-text;
@@ -132,7 +132,7 @@ $shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($divider-color, .32);
+    background-color: rgba($primary-text-color, .5);
   }
 }
 
