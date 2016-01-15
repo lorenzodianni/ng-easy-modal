@@ -1,6 +1,6 @@
 # ngEasyModal
 
-A simple directive/delegator for show, get and hide modals.
+A simple directive/delegator for show, get and hide modals. [Demo](http://codepen.io/lorenzodianni/full/adLbBX/)
 ```sh
 $ npm install ng-easy-modal --save
 ```
