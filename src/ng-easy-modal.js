@@ -58,7 +58,9 @@
 
   function EasyModalDirective() {
     return {
-      scope: {},
+      scope: {
+        resetTemplate: '='
+      },
       bindToController: true,
       controller: ['EasyModalDelegate', EasyModalController],
       controllerAs: 'easyModal',
@@ -66,19 +68,20 @@
       replace: true,
       template: `
         <div class="easy-modal">
-          <div class="easy-modal-box">
-            <div class="easy-modal-box--head">{{easyModal.get('title')}}</div>
-            <div class="easy-modal-box--body">
+          <div class="easy-modal-box" ng-class="{'is-large': !easyModal.resetTemplate}">
+            <div class="easy-modal-box--head" ng-if="!easyModal.resetTemplate">{{easyModal.get('title')}}</div>
+            <div class="easy-modal-box--body" ng-if="!easyModal.resetTemplate">
               <p>{{easyModal.get('body')}}</p>
               <div ng-transclude></div>
             </div>
-            <div class="easy-modal-box--footer">
+            <div class="easy-modal-box--footer" ng-if="!easyModal.resetTemplate">
               <button class="easy-modal-box--footer-btn"
                 ng-repeat="button in easyModal.get('buttons')"
                 ng-click="button.action($event)">
                 {{button.label}}
               </button>
             </div>
+            <div ng-transclude ng-if="easyModal.resetTemplate"></div>
           </div>
           <div class="easy-modal-close" ng-click="easyModal.get('clickOut') ? easyModal.close() : easyModal.get('clickOut')"></div>
         </div>
