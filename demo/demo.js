@@ -6,6 +6,26 @@ angular
   var main = this;
   main.easyModal = EasyModalDelegate;
 
+  var overAllObject = {
+    status: 'overAll',
+    title: 'OverAllTitle',
+    body: 'OverAllBody',
+    buttons: [{
+      label: 'OverAll 1',
+      action: function($event) {
+        printInfo('OverAll 1');
+        EasyModalDelegate.close();
+      }
+    }, {
+      label: 'OverAll 2',
+      action: function($event) {
+        printInfo('OverAll 2');
+        EasyModalDelegate.close();
+      }
+    }],
+    clickOut: true
+  };
+
   var examples = [{
     status: 'Classic',
     labels: ['One', 'Two', 'Three'],
@@ -35,11 +55,19 @@ angular
           label: 'Disagree ' + status + ' ' + label,
           action: function($event) {
             printInfo('Disagree ' + status + ' ' + label);
+            EasyModalDelegate.close();
           }
         }, {
           label: 'Agree ' + status + ' ' + label,
           action: function($event) {
             printInfo('Agree ' + status + ' ' + label);
+            EasyModalDelegate.close();
+          }
+        }, {
+          label: 'Open OverAll',
+          action: function($event) {
+            printInfo('Open OverAll');
+            EasyModalDelegate.show(overAllObject);
           }
         }],
         clickOut: clickOut

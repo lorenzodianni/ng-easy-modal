@@ -7,37 +7,52 @@
       close,
       status,
       get,
-      current: {
-        status: null,
-        title: null,
-        body: null,
-        buttons: null,
-        clickOut: null
-      }
+      current: []
     };
 
     return service;
 
-    function show() /* value, title, body, buttons, clickOut */{
-      service.current.status = arguments[0].status || arguments[0];
-      service.current.title = arguments[0].title || arguments[1];
-      service.current.body = arguments[0].body || arguments[2];
-      service.current.buttons = arguments[0].buttons || arguments[3];
-      service.current.clickOut = arguments[0].clickOut || arguments[4] || false;
+    function show() /* value, title, body, buttons, clickOut */ {
+      let easyModal = {
+        status: arguments[0].status || arguments[0],
+        title: arguments[0].title || arguments[1],
+        body: arguments[0].body || arguments[2],
+        buttons: arguments[0].buttons || arguments[3],
+        clickOut: arguments[0].clickOut || arguments[4] || false
+      };
+
+      __getCurrent().push(easyModal);
     }
 
     function close() {
-      for (let key in service.current) {
-        service.current[key] = null;
-      }
+      let index = __getCurrent().length - 1;
+      __getCurrent().splice(index, 1);
     }
 
     function status(value) {
-      return service.current.status === value;
+      let statusArray = [];
+
+      for(let i in __getCurrent()) {
+        statusArray.push(__getCurrent()[i].status);
+      }
+
+      return statusArray.indexOf(value) >= 0;
     }
 
     function get(key) {
-      return service.current[key];
+      if(__getCurrent().length) {
+        let current = null;
+
+        for(let i in __getCurrent()) {
+          current = __getCurrent()[i];
+        }
+
+        return current[key];
+      }
+    }
+
+    function __getCurrent() {
+      return service.current;
     }
   }
 
@@ -60,7 +75,7 @@
             <div class="easy-modal-box--footer">
               <button class="easy-modal-box--footer-btn"
                 ng-repeat="button in easyModal.get('buttons')"
-                ng-click="button.action($event); easyModal.close();">
+                ng-click="button.action($event)">
                 {{button.label}}
               </button>
             </div>

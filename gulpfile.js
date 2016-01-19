@@ -31,4 +31,9 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('default', ['scripts', 'styles']);
+gulp.task('watch', function() {
+  gulp.watch('./src/ng-easy-modal.js', ['scripts']);
+  gulp.watch('./src/ng-easy-modal.scss', ['styles']);
+});
+
+gulp.task('default', ['scripts', 'styles', 'watch']);
