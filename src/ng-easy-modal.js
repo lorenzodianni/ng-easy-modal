@@ -2,58 +2,51 @@
 
 (() => {
   function EasyModalDelegate() {
+    let __currents = {};
+
     let service = {
       show,
       close,
       status,
-      get,
-      current: []
+      get
     };
 
     return service;
 
-    function show() /* value, title, body, buttons, clickOut */ {
-      let easyModal = {
-        status: arguments[0].status || arguments[0],
-        title: arguments[0].title || arguments[1],
-        body: arguments[0].body || arguments[2],
-        buttons: arguments[0].buttons || arguments[3],
-        clickOut: arguments[0].clickOut || arguments[4] || false
-      };
+    function EasyModal() {
+      this.status = arguments[0].status || arguments[0];
+      this.title = arguments[0].title || arguments[1];
+      this.body = arguments[0].body || arguments[2];
+      this.buttons = arguments[0].buttons || arguments[3];
+      this.clickOut = arguments[0].clickOut || arguments[4] || false;
+    }
 
-      __getCurrent().push(easyModal);
+    function show() {
+      __currents[arguments[0].status] = new EasyModal(arguments[0]);
     }
 
     function close() {
-      let index = __getCurrent().length - 1;
-      __getCurrent().splice(index, 1);
+      let keys = Object.keys(__currents);
+      let lastKey = keys.length - 1;
+      let lastOne = keys[lastKey];
+
+      delete __currents[lastOne];
     }
 
-    function status(value) {
-      let statusArray = [];
-
-      for(let i in __getCurrent()) {
-        statusArray.push(__getCurrent()[i].status);
-      }
-
-      return statusArray.indexOf(value) >= 0;
+    function status(easyModal) {
+      return __currents[easyModal];
     }
 
     function get(key) {
-      if(__getCurrent().length) {
-        let current = null;
+      if(Object.keys(__currents).length) {
 
-        for(let i in __getCurrent()) {
-          current = __getCurrent()[i];
+        for(let easyModal in __currents) {
+          return __currents[easyModal][key];
         }
 
-        return current[key];
       }
     }
 
-    function __getCurrent() {
-      return service.current;
-    }
   }
 
   function EasyModalDirective() {
