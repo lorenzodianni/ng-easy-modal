@@ -27,8 +27,8 @@
 
     function close() {
       var keys = Object.keys(__currents);
-      var lastKey = keys.length - 1;
-      var lastOne = keys[lastKey];
+      var lastIndex = keys.length - 1;
+      var lastOne = keys[lastIndex];
 
       delete __currents[lastOne];
     }
