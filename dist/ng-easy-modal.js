@@ -33,8 +33,8 @@
       delete __currents[lastOne];
     }
 
-    function status(easyModal) {
-      return __currents[easyModal];
+    function status(value) {
+      return __currents[value];
     }
 
     function get(key) {
