@@ -53,7 +53,7 @@
     return {
       scope: {
         easyModal: '=ngIf',
-        resetTemplate: '='
+        resetTemplate: '=?'
       },
       bindToController: true,
       controller: ['EasyModalDelegate', EasyModalController],
