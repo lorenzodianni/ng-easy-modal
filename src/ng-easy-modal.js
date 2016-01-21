@@ -18,7 +18,7 @@
       this.title = arguments[0].title || arguments[1];
       this.body = arguments[0].body || arguments[2];
       this.buttons = arguments[0].buttons || arguments[3];
-      this.clickOut = arguments[0].clickOut || arguments[4] || false;
+      this.clickOut = arguments[0].clickOut === false ? false : true || arguments[4] || true;
     }
 
     function show() {

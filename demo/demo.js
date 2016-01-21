@@ -6,26 +6,6 @@ angular
   var main = this;
   main.easyModal = EasyModalDelegate;
 
-  var overAllObject = {
-    status: 'overAll',
-    title: 'OverAllTitle',
-    body: 'OverAllBody',
-    buttons: [{
-      label: 'OverAll 1',
-      action: function($event) {
-        printInfo('OverAll 1');
-        EasyModalDelegate.close();
-      }
-    }, {
-      label: 'OverAll 2',
-      action: function($event) {
-        printInfo('OverAll 2');
-        EasyModalDelegate.close();
-      }
-    }],
-    clickOut: true
-  };
-
   var examples = [{
     status: 'Classic',
     labels: ['One', 'Two', 'Three'],
@@ -67,7 +47,7 @@ angular
           label: 'Open OverAll',
           action: function($event) {
             printInfo('Open OverAll');
-            EasyModalDelegate.show(overAllObject);
+            EasyModalDelegate.show({status: 'overAll'});
           }
         }],
         clickOut: clickOut
