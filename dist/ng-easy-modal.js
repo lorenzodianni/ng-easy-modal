@@ -68,8 +68,6 @@
     };
 
     function EasyModalController(EasyModalDelegate) {
-      /*jshint validthis:true */
-      this.get = EasyModalDelegate.get;
       this.close = EasyModalDelegate.close;
     }
   }
