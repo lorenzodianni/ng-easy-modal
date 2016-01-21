@@ -14,11 +14,11 @@
     return service;
 
     function EasyModal() {
-      this.status = arguments[0].status || arguments[0];
-      this.title = arguments[0].title || arguments[1];
-      this.body = arguments[0].body || arguments[2];
-      this.buttons = arguments[0].buttons || arguments[3];
-      this.clickOut = arguments[0].clickOut === false ? false : true || arguments[4] || true;
+      this.status = arguments[0].status;
+      this.title = arguments[0].title;
+      this.body = arguments[0].body;
+      this.buttons = arguments[0].buttons;
+      this.clickOut = arguments[0].clickOut === false ? false : true;
     }
 
     function show() {
