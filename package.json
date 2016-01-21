@@ -1,6 +1,6 @@
 {
   "name": "ng-easy-modal",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Modal directive for AngularJS 1.x",
   "scripts": {
     "test": "none"
