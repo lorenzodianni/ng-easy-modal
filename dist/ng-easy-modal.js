@@ -42,8 +42,8 @@
 
         var statuses = [];
 
-        for (var status in __currents) {
-          statuses.push(status);
+        for (var _status in __currents) {
+          statuses.push(_status);
         }
 
         for (var i = statuses.length - 1; i >= 0; i--) {
