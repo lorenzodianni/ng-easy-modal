@@ -39,6 +39,7 @@
 
     function get(key) {
       if (Object.keys(__currents).length) {
+
         var statuses = [];
 
         for (var _status in __currents) {
