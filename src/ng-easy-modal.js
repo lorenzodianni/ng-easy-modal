@@ -39,9 +39,14 @@
 
     function get(key) {
       if(Object.keys(__currents).length) {
+        var statuses = [];
 
-        for(let easyModal in __currents) {
-          return __currents[easyModal][key];
+        for (let status in __currents) {
+          statuses.push(status);
+        }
+
+        for (let i = statuses.length-1; i >= 0; i--) {
+          return __currents[statuses[i]][key];
         }
 
       }
@@ -77,7 +82,7 @@
             </div>
             <div ng-transclude ng-if="vm.resetTemplate"></div>
           </div>
-          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.close() : vm.easyModal.clickOut"></div>
+          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.close() : false"></div>
         </div>
       `
     };
