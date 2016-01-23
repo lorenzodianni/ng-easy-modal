@@ -2,16 +2,15 @@
 
 (() => {
   function EasyModalDelegate() {
+
     let _currents = {};
 
     let service = {
-      show,
-      status,
+      close,
       get,
-      close
+      show,
+      status
     };
-
-    return service;
 
     function EasyModal() {
       this.status = arguments[0].status;
@@ -20,6 +19,8 @@
       this.buttons = arguments[0].buttons;
       this.clickOut = arguments[0].clickOut === false ? false : true;
     }
+
+    EasyModal.prototype.close = close;
 
     function show() {
       _currents[arguments[0].status] = new EasyModal(arguments[0]);
@@ -53,6 +54,8 @@
       }
     }
 
+    return service;
+
   }
 
   function EasyModalDirective() {
@@ -62,7 +65,7 @@
         resetTemplate: '=?'
       },
       bindToController: true,
-      controller: ['EasyModalDelegate', EasyModalController],
+      controller: [function EasyModalController(){}],
       controllerAs: 'vm',
       transclude: true,
       replace: true,
@@ -83,14 +86,10 @@
             </div>
             <div ng-transclude ng-if="vm.resetTemplate"></div>
           </div>
-          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.close() : false"></div>
+          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.easyModal.close() : false"></div>
         </div>
       `
     };
-
-    function EasyModalController(EasyModalDelegate) {
-      this.close = EasyModalDelegate.close;
-    }
   }
 
   angular

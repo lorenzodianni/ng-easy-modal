@@ -2,16 +2,15 @@
 
 (function () {
   function EasyModalDelegate() {
+
     var _currents = {};
 
     var service = {
-      show: show,
-      status: status,
+      close: close,
       get: get,
-      close: close
+      show: show,
+      status: status
     };
-
-    return service;
 
     function EasyModal() {
       this.status = arguments[0].status;
@@ -20,6 +19,8 @@
       this.buttons = arguments[0].buttons;
       this.clickOut = arguments[0].clickOut === false ? false : true;
     }
+
+    EasyModal.prototype.close = close;
 
     function show() {
       _currents[arguments[0].status] = new EasyModal(arguments[0]);
@@ -51,6 +52,8 @@
         }
       }
     }
+
+    return service;
   }
 
   function EasyModalDirective() {
@@ -60,16 +63,12 @@
         resetTemplate: '=?'
       },
       bindToController: true,
-      controller: ['EasyModalDelegate', EasyModalController],
+      controller: [function EasyModalController() {}],
       controllerAs: 'vm',
       transclude: true,
       replace: true,
-      template: '\n        <div class="easy-modal">\n          <div class="easy-modal-box" ng-class="{\'is-large\': !vm.resetTemplate}">\n            <div class="easy-modal-box--head" ng-if="!vm.resetTemplate">{{vm.easyModal.title}}</div>\n            <div class="easy-modal-box--body" ng-if="!vm.resetTemplate">\n              <p>{{vm.easyModal.body}}</p>\n              <div ng-transclude></div>\n            </div>\n            <div class="easy-modal-box--footer" ng-if="!vm.resetTemplate">\n              <button class="easy-modal-box--footer-btn"\n                ng-repeat="button in vm.easyModal.buttons"\n                ng-click="button.action($event)">\n                {{button.label}}\n              </button>\n            </div>\n            <div ng-transclude ng-if="vm.resetTemplate"></div>\n          </div>\n          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.close() : false"></div>\n        </div>\n      '
+      template: '\n        <div class="easy-modal">\n          <div class="easy-modal-box" ng-class="{\'is-large\': !vm.resetTemplate}">\n            <div class="easy-modal-box--head" ng-if="!vm.resetTemplate">{{vm.easyModal.title}}</div>\n            <div class="easy-modal-box--body" ng-if="!vm.resetTemplate">\n              <p>{{vm.easyModal.body}}</p>\n              <div ng-transclude></div>\n            </div>\n            <div class="easy-modal-box--footer" ng-if="!vm.resetTemplate">\n              <button class="easy-modal-box--footer-btn"\n                ng-repeat="button in vm.easyModal.buttons"\n                ng-click="button.action($event)">\n                {{button.label}}\n              </button>\n            </div>\n            <div ng-transclude ng-if="vm.resetTemplate"></div>\n          </div>\n          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.easyModal.close() : false"></div>\n        </div>\n      '
     };
-
-    function EasyModalController(EasyModalDelegate) {
-      this.close = EasyModalDelegate.close;
-    }
   }
 
   angular.module('ngEasyModal', []).factory('EasyModalDelegate', [EasyModalDelegate]).directive('easyModal', [EasyModalDirective]);
