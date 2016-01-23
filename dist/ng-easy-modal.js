@@ -2,7 +2,7 @@
 
 (function () {
   function EasyModalDelegate() {
-    var __currents = {};
+    var _currents = {};
 
     var service = {
       show: show,
@@ -22,32 +22,32 @@
     }
 
     function show() {
-      __currents[arguments[0].status] = new EasyModal(arguments[0]);
+      _currents[arguments[0].status] = new EasyModal(arguments[0]);
     }
 
     function close() {
-      var keys = Object.keys(__currents);
+      var keys = Object.keys(_currents);
       var lastIndex = keys.length - 1;
       var lastOne = keys[lastIndex];
 
-      delete __currents[lastOne];
+      delete _currents[lastOne];
     }
 
     function status(value) {
-      return __currents[value];
+      return _currents[value];
     }
 
     function get(key) {
-      if (Object.keys(__currents).length) {
+      if (Object.keys(_currents).length) {
 
         var statuses = [];
 
-        for (var _status in __currents) {
+        for (var _status in _currents) {
           statuses.push(_status);
         }
 
         for (var i = statuses.length - 1; i >= 0; i--) {
-          return __currents[statuses[i]][key];
+          return _currents[statuses[i]][key];
         }
       }
     }

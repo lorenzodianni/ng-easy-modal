@@ -2,7 +2,7 @@
 
 (() => {
   function EasyModalDelegate() {
-    let __currents = {};
+    let _currents = {};
 
     let service = {
       show,
@@ -22,32 +22,32 @@
     }
 
     function show() {
-      __currents[arguments[0].status] = new EasyModal(arguments[0]);
+      _currents[arguments[0].status] = new EasyModal(arguments[0]);
     }
 
     function close() {
-      let keys = Object.keys(__currents);
+      let keys = Object.keys(_currents);
       let lastIndex = keys.length - 1;
       let lastOne = keys[lastIndex];
 
-      delete __currents[lastOne];
+      delete _currents[lastOne];
     }
 
     function status(value) {
-      return __currents[value];
+      return _currents[value];
     }
 
     function get(key) {
-      if(Object.keys(__currents).length) {
+      if(Object.keys(_currents).length) {
 
         var statuses = [];
 
-        for (let status in __currents) {
+        for (let status in _currents) {
           statuses.push(status);
         }
 
         for (let i = statuses.length-1; i >= 0; i--) {
-          return __currents[statuses[i]][key];
+          return _currents[statuses[i]][key];
         }
 
       }
