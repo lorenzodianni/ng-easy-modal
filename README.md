@@ -1,5 +1,6 @@
 # ngEasyModal
 
+[![npm version](https://badge.fury.io/js/ng-easy-modal.svg)](https://badge.fury.io/js/ng-easy-modal)
 [![GitHub version](https://badge.fury.io/gh/lorenzodianni%2Fng-easy-modal.svg)](https://badge.fury.io/gh/lorenzodianni%2Fng-easy-modal)
 
 A simple directive/delegator for show, get and hide modals. <a href="http://codepen.io/lorenzodianni/full/adLbBX/" target="_blank">Demo Page</a>
