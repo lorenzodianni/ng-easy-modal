@@ -89,7 +89,7 @@ CSS classes inside easy-modal directive:
 - EasyModalDelegate.get(value);
 - [reset-template]
 
-### API: show(object)
+### show(object)
 ```javascript
 // Set your modal
 var myModal = {
@@ -114,13 +114,13 @@ var myModal = {
 EasyModalDelegate.show(myModal)
 ```
 
-### API: close()
+### close()
 Close the current modal
 ```javascript
 EasyModalDelegate.close()
 ```
 
-### API: status(value)
+### status(value)
 Return true/modalObject if we show a modal with the same status/id
 ```html
 <easy-modal
@@ -132,7 +132,7 @@ Return true/modalObject if we show a modal with the same status/id
 </button>
 ```
 
-### API: get(value)
+### get(value)
 Return value from the current modal
 ```javascript
 EasyModalDelegate.get('status');
@@ -142,7 +142,7 @@ EasyModalDelegate.get('buttons');
 EasyModalDelegate.get('clickOut');
 ```
 
-### API: [reset-template]
+### [reset-template]
 Reset modal template, use it with transclude method
 ```html
 <easy-modal
