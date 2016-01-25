@@ -83,10 +83,77 @@ CSS classes inside easy-modal directive:
 ```
 
 # API
-- EasyModalDelegate.show(object || status, title, body, actions, clickOut)
+- EasyModalDelegate.show(object)
 - EasyModalDelegate.close()
-- EasyModalDelegate.get('status')
-- EasyModalDelegate.get('title')
-- EasyModalDelegate.get('body')
-- EasyModalDelegate.get('buttons')
-- EasyModalDelegate.get('clickOut')
+- EasyModalDelegate.status(value)
+- EasyModalDelegate.get(value);
+- [reset-template]
+
+### API: show(object)
+```javascript
+// Set your modal
+var myModal = {
+  status: 'yourStatusOrID',
+  title: 'Modal title',
+  body: 'Modal paragraph',
+  buttons: [{
+    label: 'Button one',
+    action: function(){
+      alert('I chose button one!');
+    }
+  }, {
+    label: 'Button two',
+    action: function(){
+      alert('I chose button two!');
+    }
+  }],
+  clickOut: false
+};
+
+// Show your modal
+EasyModalDelegate.show(myModal)
+```
+
+### API: close()
+Close the current modal
+```javascript
+EasyModalDelegate.close()
+```
+
+### API: status(value)
+Return true/modalObject if we show a modal with the same status/id
+```html
+<easy-modal
+  ng-if="myCtrl.easyModal.status('helloModal')">
+</easy-modal>
+
+<button
+  ng-click="myCtrl.easyModal.show({status: 'helloModal', title: 'Hi!'})">
+</button>
+```
+
+### API: get(value)
+Return value from the current modal
+```javascript
+EasyModalDelegate.get('status')
+EasyModalDelegate.get('title')
+EasyModalDelegate.get('body')
+EasyModalDelegate.get('buttons')
+EasyModalDelegate.get('clickOut')
+```
+
+### API: [reset-template]
+Reset modal template, use it with transclude method
+```html
+<easy-modal
+  reset-template="true"
+  ng-if="myCtrl.easyModal.status('myModal')">
+    <h1>My new title</h1>
+    <p>My new content</p>
+    <button>CLick me!</button>
+</easy-modal>
+
+<button
+  ng-click="myCtrl.easyModal.show({status: 'myModal'})">
+</button>
+```
