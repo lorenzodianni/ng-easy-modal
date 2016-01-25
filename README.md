@@ -135,11 +135,11 @@ Return true/modalObject if we show a modal with the same status/id
 ### API: get(value)
 Return value from the current modal
 ```javascript
-EasyModalDelegate.get('status')
-EasyModalDelegate.get('title')
-EasyModalDelegate.get('body')
-EasyModalDelegate.get('buttons')
-EasyModalDelegate.get('clickOut')
+EasyModalDelegate.get('status');
+EasyModalDelegate.get('title');
+EasyModalDelegate.get('body');
+EasyModalDelegate.get('buttons');
+EasyModalDelegate.get('clickOut');
 ```
 
 ### API: [reset-template]
