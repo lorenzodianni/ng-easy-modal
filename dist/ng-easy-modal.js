@@ -12,16 +12,6 @@
       status: status
     };
 
-    function EasyModal() {
-      this.status = arguments[0].status;
-      this.title = arguments[0].title;
-      this.body = arguments[0].body;
-      this.buttons = arguments[0].buttons;
-      this.clickOut = arguments[0].clickOut === false ? false : true;
-    }
-
-    EasyModal.prototype.close = close;
-
     function show() {
       _currents[arguments[0].status] = new EasyModal(arguments[0]);
     }
@@ -52,6 +42,16 @@
         }
       }
     }
+
+    function EasyModal() {
+      this.status = arguments[0].status;
+      this.title = arguments[0].title;
+      this.body = arguments[0].body;
+      this.buttons = arguments[0].buttons;
+      this.clickOut = arguments[0].clickOut === false ? false : true;
+    }
+
+    EasyModal.prototype.close = close;
 
     return service;
   }
