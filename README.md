@@ -59,20 +59,6 @@ Insert inside your .html file:
 </div>
 ```
 
-# Animation
-First include *angular-animate.js* and *ng-easy-modal.css* in your HTML:
-```html
-<link rel="stylesheet" href="ng-easy-modal.css">
-
-<script src="angular.js">
-<script src="angular-animate.js">
-```
-Then load the module in your application by adding it as a dependent module:
-```javascript
-angular.module('MyApp', ['ngEasyModal', 'ngAnimate'])
-```
-Including ngAnimate and *ng-easy-modal.css* the animation hooks are enabled for **ngEasyModal**.
-
 # Style
 Insert *ng-easy-modal.css* in the &lt;header&gt; of your .html file
 ```html
@@ -95,6 +81,20 @@ CSS classes inside easy-modal directive:
 .easy-modal-box--footer-btn
 .easy-modal-close
 ```
+
+# Animation
+First include *angular-animate.js* and *ng-easy-modal.css* in your HTML:
+```html
+<link rel="stylesheet" href="ng-easy-modal.css">
+
+<script src="angular.js">
+<script src="angular-animate.js">
+```
+Then load the module in your application by adding it as a dependent module:
+```javascript
+angular.module('MyApp', ['ngEasyModal', 'ngAnimate'])
+```
+Including ngAnimate and *ng-easy-modal.css* the animation hooks are enabled for **ngEasyModal**.
 
 # API
 - EasyModalDelegate.show(object)
