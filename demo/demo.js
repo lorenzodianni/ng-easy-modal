@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-.module('MyApp', ['ngEasyModal'])
+.module('MyApp', ['ngEasyModal', 'ngAnimate'])
 .controller('MainCtrl', ['EasyModalDelegate', function MainCtrl(EasyModalDelegate) {
   var main = this;
   main.easyModal = EasyModalDelegate;

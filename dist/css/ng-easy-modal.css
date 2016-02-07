@@ -108,4 +108,25 @@
   display: none;
 }
 
+.easy-modal {
+  -moz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.easy-modal.ng-enter, .easy-modal.ng-leave.ng-leave-active {
+  opacity: 0;
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.easy-modal.ng-enter.ng-enter-active, .easy-modal.ng-leave {
+  opacity: 1;
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
 /*# sourceMappingURL=ng-easy-modal.css.map */

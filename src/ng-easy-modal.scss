@@ -146,3 +146,23 @@ $shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none;
 }
+
+//
+// –––––––––––––––––––––––––––––––––––
+// Animation @require ngAnimate
+
+.easy-modal{
+  @include transition(all .3s cubic-bezier(.4,0,.2,1));
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+    @include transform(scale(1.1));
+  }
+
+  &.ng-enter.ng-enter-active,
+  &.ng-leave {
+    opacity: 1;
+    @include transform(scale(1));
+  }
+}
