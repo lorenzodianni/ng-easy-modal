@@ -49,6 +49,7 @@
       this.body = arguments[0].body;
       this.buttons = arguments[0].buttons;
       this.clickOut = arguments[0].clickOut === false ? false : true;
+      this.templateUrl = arguments[0].templateUrl || false;
     }
 
     EasyModal.prototype.close = close;
@@ -67,7 +68,7 @@
       controllerAs: 'vm',
       transclude: true,
       replace: true,
-      template: '\n        <div class="easy-modal">\n          <div class="easy-modal-box" ng-class="{\'is-large\': !vm.resetTemplate}">\n            <div class="easy-modal-box--head" ng-if="!vm.resetTemplate">{{vm.easyModal.title}}</div>\n            <div class="easy-modal-box--body" ng-if="!vm.resetTemplate">\n              <p>{{vm.easyModal.body}}</p>\n              <div ng-transclude></div>\n            </div>\n            <div class="easy-modal-box--footer" ng-if="!vm.resetTemplate">\n              <button class="easy-modal-box--footer-btn"\n                ng-repeat="button in vm.easyModal.buttons"\n                ng-click="button.action($event)">\n                {{button.label}}\n              </button>\n            </div>\n            <div ng-transclude ng-if="vm.resetTemplate"></div>\n          </div>\n          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.easyModal.close() : false"></div>\n        </div>\n      '
+      template: '\n        <div class="easy-modal">\n          <div class="easy-modal-box" ng-class="{\'is-large\': !vm.resetTemplate && !vm.easyModal.templateUrl}">\n\n            <div ng-if="!vm.resetTemplate && !vm.easyModal.templateUrl">\n              <div class="easy-modal-box--head">{{vm.easyModal.title}}</div>\n              <div class="easy-modal-box--body">\n                <p>{{vm.easyModal.body}}</p>\n                <div ng-transclude></div>\n              </div>\n              <div class="easy-modal-box--footer">\n                <button class="easy-modal-box--footer-btn"\n                  ng-repeat="button in vm.easyModal.buttons"\n                  ng-click="button.action($event)">\n                  {{button.label}}\n                </button>\n              </div>\n            </div>\n\n            <div\n              ng-include="vm.easyModal.templateUrl"\n              ng-if="vm.easyModal.templateUrl && !vm.resetTemplate">\n            </div>\n\n            <div ng-transclude ng-if="vm.resetTemplate"></div>\n          </div>\n          <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.easyModal.close() : false"></div>\n        </div>\n      '
     };
   }
 

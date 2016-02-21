@@ -50,6 +50,7 @@
       this.body = arguments[0].body;
       this.buttons = arguments[0].buttons;
       this.clickOut = arguments[0].clickOut === false ? false : true;
+      this.templateUrl = arguments[0].templateUrl || false;
     }
 
     EasyModal.prototype.close = close;
@@ -71,19 +72,28 @@
       replace: true,
       template: `
         <div class="easy-modal">
-          <div class="easy-modal-box" ng-class="{'is-large': !vm.resetTemplate}">
-            <div class="easy-modal-box--head" ng-if="!vm.resetTemplate">{{vm.easyModal.title}}</div>
-            <div class="easy-modal-box--body" ng-if="!vm.resetTemplate">
-              <p>{{vm.easyModal.body}}</p>
-              <div ng-transclude></div>
+          <div class="easy-modal-box" ng-class="{'is-large': !vm.resetTemplate && !vm.easyModal.templateUrl}">
+
+            <div ng-if="!vm.resetTemplate && !vm.easyModal.templateUrl">
+              <div class="easy-modal-box--head">{{vm.easyModal.title}}</div>
+              <div class="easy-modal-box--body">
+                <p>{{vm.easyModal.body}}</p>
+                <div ng-transclude></div>
+              </div>
+              <div class="easy-modal-box--footer">
+                <button class="easy-modal-box--footer-btn"
+                  ng-repeat="button in vm.easyModal.buttons"
+                  ng-click="button.action($event)">
+                  {{button.label}}
+                </button>
+              </div>
             </div>
-            <div class="easy-modal-box--footer" ng-if="!vm.resetTemplate">
-              <button class="easy-modal-box--footer-btn"
-                ng-repeat="button in vm.easyModal.buttons"
-                ng-click="button.action($event)">
-                {{button.label}}
-              </button>
+
+            <div
+              ng-include="vm.easyModal.templateUrl"
+              ng-if="vm.easyModal.templateUrl && !vm.resetTemplate">
             </div>
+
             <div ng-transclude ng-if="vm.resetTemplate"></div>
           </div>
           <div class="easy-modal-close" ng-click="vm.easyModal.clickOut ? vm.easyModal.close() : false"></div>

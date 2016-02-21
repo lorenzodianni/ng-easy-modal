@@ -9,15 +9,18 @@ angular
   var examples = [{
     status: 'Classic',
     labels: ['One', 'Two', 'Three'],
-    clickOut: false
+    clickOut: false,
+    templateUrl: false
   }, {
     status: 'Click Out',
     labels: ['One', 'Two', 'Three'],
-    clickOut: true
+    clickOut: true,
+    templateUrl: './templateUrl.html'
   }, {
     status: 'Transclude',
     labels: ['One', 'Two', 'Three'],
-    clickOut: false
+    clickOut: false,
+    templateUrl: false
   }];
 
   examples.forEach(function(example){
@@ -26,6 +29,7 @@ angular
       var key = toCamelCase(example.status) + label;
       var status = example.status;
       var clickOut = example.clickOut;
+      var templateUrl = example.templateUrl;
 
       main[key] = {
         status: toCamelCase(status),
@@ -50,7 +54,8 @@ angular
             EasyModalDelegate.show({status: 'overAll'});
           }
         }],
-        clickOut: clickOut
+        clickOut: clickOut,
+        templateUrl: templateUrl
       };
 
     });
