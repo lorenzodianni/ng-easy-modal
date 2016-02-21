@@ -41,7 +41,9 @@ Create a new Object for set all EasyModal params
         }
       }],
       // Close on clickOut
-      clickOut: false
+      clickOut: false,
+      // template
+      templateUrl: 'folder/file.html'
     };
 }]);
 ```
@@ -121,7 +123,8 @@ var myModal = {
       alert('I chose button two!');
     }
   }],
-  clickOut: false
+  clickOut: false,
+  templateUrl: 'folder/file.html'
 };
 
 // Show your modal
@@ -154,6 +157,7 @@ EasyModalDelegate.get('title');
 EasyModalDelegate.get('body');
 EasyModalDelegate.get('buttons');
 EasyModalDelegate.get('clickOut');
+EasyModalDelegate.get('templateUrl');
 ```
 
 ### [reset-template]
