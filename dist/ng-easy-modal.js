@@ -12,8 +12,8 @@
       status: status
     };
 
-    function show() {
-      _currents[arguments[0].status] = new EasyModal(arguments[0]);
+    function show(newEasyModal) {
+      _currents[newEasyModal.status] = new EasyModal(newEasyModal);
     }
 
     function close() {
@@ -31,28 +31,30 @@
     function get(key) {
       if (Object.keys(_currents).length) {
 
-        var statuses = [];
+        var _statuses = [];
 
         for (var _status in _currents) {
-          statuses.push(_status);
+          _statuses.push(_status);
         }
 
-        for (var i = statuses.length - 1; i >= 0; i--) {
-          return _currents[statuses[i]][key];
+        for (var i = _statuses.length - 1; i >= 0; i--) {
+          return _currents[_statuses[i]][key];
         }
       }
     }
 
-    function EasyModal() {
-      this.status = arguments[0].status;
-      this.title = arguments[0].title;
-      this.body = arguments[0].body;
-      this.buttons = arguments[0].buttons;
-      this.clickOut = arguments[0].clickOut === false ? false : true;
-      this.templateUrl = arguments[0].templateUrl || false;
+    function EasyModal(newEasyModal) {
+      this.status = newEasyModal.status;
+      this.title = newEasyModal.title;
+      this.body = newEasyModal.body;
+      this.buttons = newEasyModal.buttons;
+      this.clickOut = newEasyModal.clickOut === false ? false : true;
+      this.templateUrl = newEasyModal.templateUrl || false;
     }
 
-    EasyModal.prototype.close = close;
+    EasyModal.prototype = {
+      close: close
+    };
 
     return service;
   }

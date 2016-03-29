@@ -1,6 +1,6 @@
 {
   "name": "ng-easy-modal",
-  "version": "2.1.0",
+  "version": "2.1.5",
   "description": "Modal directive for AngularJS 1.x",
   "scripts": {
     "build": "gulp | live-server --open=demo --quiet"
