@@ -1,7 +1,10 @@
 {
   "name": "ng-easy-modal",
-  "version": "2.1.5",
+  "author": "Lorenzo D'Ianni",
+  "version": "2.1.6",
   "description": "Modal directive for AngularJS 1.x",
+  "license": "MIT",
+  "homepage": "https://github.com/lorenzodianni/ng-easy-modal#readme",
   "scripts": {
     "build": "gulp | live-server --open=demo --quiet"
   },
@@ -9,12 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/lorenzodianni/ng-easy-modal.git"
   },
-  "author": "Lorenzo D'Ianni",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lorenzodianni/ng-easy-modal/issues"
   },
-  "homepage": "https://github.com/lorenzodianni/ng-easy-modal#readme",
+  "keywords": [
+    "modal",
+    "easyModal",
+    "javascript",
+    "angularjs",
+    "easy"
+  ],
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
     "gulp": "^3.9.0",
