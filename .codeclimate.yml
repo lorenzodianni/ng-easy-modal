@@ -58,3 +58,4 @@ ratings:
   - "**.rb"
 exclude_paths:
 - dist/
+- demo/
